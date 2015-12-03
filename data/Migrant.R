@@ -7,7 +7,7 @@ library("tidyr")
 library("dplyr")
 ###Deportations: http://www.dhs.gov/publication/yearbook-immigration-statistics-2013-enforcement-actions
 ###Imprisonment: http://www.bjs.gov/index.cfm?ty=nps
-migrant <- read.csv("~/Desktop/juliacbowling.github.io/migrant.csv")
+migrant <- read.csv("~/Desktop/juliacbowling.github.io/data/migrant.csv")
 View(migrant)
 head(migrant)
 migrant$northborder <- migrant$BP.North+migrant$HS.North+migrant$ER.North
@@ -78,3 +78,12 @@ plot5 <- ggplot(removal1978, aes(x=Year)) +
   theme(plot.title = element_text(family="Helvetica", face ="bold", size=16, hjust=0))
 print(plot5)
 ggsave("im_dep.pdf", plot5)
+######
+######
+######
+tracts <- readOGR(dsn = 'counties', layer = 'cb_2014_us_county_20m')
+names(tracts)
+tracts <- fortify(tracts, region='AFFGEOID')
+head(tracts)
+mapData <- left_join(tracts, languages, by=c('id' = 'Id'))
+languages <- arrange(languages, -sp_percent)
