@@ -1,0 +1,45 @@
+Presidency ,President ,TO_D,TO_MM,TO_YYYY,TO_D,TO_MM,LO_YYYY,Party ,Home State,count
+1,George Washington,30,4,1789,4,3,1797,Independent ,Virginia,2000000
+2,John Adams,4,3,1797,4,3,1801,Federalist ,Massachusetts,2000000
+3,Thomas Jefferson,4,3,1801,4,3,1809,Democratic-Republican ,Virginia,2000000
+4,James Madison,4,3,1809,4,3,1817,Democratic-Republican ,Virginia,2000000
+5,James Monroe,4,3,1817,4,3,1825,Democratic-Republican ,Virginia,2000000
+6,John Quincy Adams,4,3,1825,4,3,1829,Democratic-Republican/National Republican ,Massachusetts,2000000
+7,Andrew Jackson,4,3,1829,4,3,1837,Democratic ,Tennessee,2000000
+8,Martin Van Buren,4,3,1837,4,3,1841,Democratic ,New York,2000000
+9,William Henry Harrison,4,3,1841,4,4,1841,Whig,Ohio,2000000
+10,John Tyler,4,4,1841,4,3,1845,Whig,Virginia,2000000
+11,James K. Polk,4,3,1845,4,3,1849,Democratic ,Tennessee,2000000
+12,Zachary Taylor,4,3,1849,9,7,1850,Whig,Louisiana,2000000
+13,Millard Fillmore,9,7,1850,4,3,1853,Whig,New York,2000000
+14,Franklin Pierce,4,3,1853,4,3,1857,Democratic ,New Hampshire,2000000
+15,James Buchanan,4,3,1857,4,3,1861,Democratic ,Pennsylvania,2000000
+16,Abraham Lincoln,4,3,1861,15,4,1865,Republican/National Union,Illinois,2000000
+17,Andrew Johnson,15,4,1865,4,3,1869,Democratic/National Union,Tennessee,2000000
+18,Ulysses S. Grant,4,3,1869,4,3,1877,Republican ,Ohio,2000000
+19,Rutherford B. Hayes,4,3,1877,4,3,1881,Republican ,Ohio,2000000
+20,James A. Garfield,4,3,1881,19,9,1881,Republican ,Ohio,2000000
+21,Chester A. Arthur,19,9,1881,4,3,1885,Republican ,New York,2000000
+22,Grover Cleveland,4,3,1885,4,3,1889,Democratic ,New York,2000000
+23,Benjamin Harrison,4,3,1889,4,3,1893,Republican ,Indiana,2000000
+24,Grover Cleveland (2nd term),4,3,1893,4,3,1897,Democratic ,New York,2000000
+25,William McKinley,4,3,1897,14,9,1901,Republican ,Ohio,2000000
+26,Theodore Roosevelt,14,9,1901,4,3,1909,Republican ,New York,2000000
+27,William Howard Taft,4,3,1909,4,3,1913,Republican ,Ohio,2000000
+28,Woodrow Wilson,4,3,1913,4,3,1921,Democratic ,New Jersey,2000000
+29,Warren G. Harding,4,3,1921,2,8,1923,Republican ,Ohio,2000000
+30,Calvin Coolidge,2,8,1923,4,3,1929,Republican ,Massachusetts,2000000
+31,Herbert Hoover,4,3,1929,4,3,1933,Republican ,Iowa,2000000
+32,Franklin D. Roosevelt,4,3,1933,12,4,1945,Democratic,New York,2000000
+33,Harry S. Truman,12,4,1945,20,1,1953,Democratic,Missouri,2000000
+34,Dwight D. Eisenhower,20,1,1953,20,1,1961,Republican ,Texas,2000000
+35,John F. Kennedy,20,1,1961,22,11,1963,Democratic,Massachusetts,2000000
+36,Lyndon B. Johnson,22,11,1963,20,1,1969,Democratic,Texas,2000000
+37,Richard Nixon,20,1,1969,9,8,1974,Republican,California,2000000
+38,Gerald Ford,9,8,1974,20,1,1977,Republican,Michigan,2000000
+39,Jimmy Carter,20,1,1977,20,1,1981,Democratic ,Georgia,2000000
+40,Ronald Reagan,20,1,1981,20,1,1989,Republican ,California,2000000
+41,George H. W. Bush,20,1,1989,20,1,1993,Republican ,Texas,2000000
+42,Bill Clinton,20,1,1993,20,1,2001,Democratic ,Arkansas,2000000
+43,George W. Bush,20,1,2001,20,1,2009,Republican ,Texas,2000000
+44,Barack Obama,20,1,2009,20,1,2016,Democratic ,Illinois,2000000

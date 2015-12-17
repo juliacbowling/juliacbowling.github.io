@@ -49,11 +49,20 @@ plot3 <- ggplot(chart_data, aes(x=Year, y=na_percent)) + coord_flip() + geom_bar
 print(plot3)
 
 library(dplyr)
+require(tidyr)
 continent <- select(migrant, Year, Total, North.America, South.America, Africa, Asia, Europe, Oceania)
 contdeport <- gather(continent, name, deportations, North.America:Oceania)
 
-topcountry <- select(migrant, Year, Total, Mexico, Guatemala, Honduras, El.Salvador)
-topdeport <- gather(topcountry, country, deportations, Mexico:El.Salvador)
+topcountry <- select(migrant, Year, Total, Mexico, Guatemala, Honduras, El.Salvador, Canada)
+topdeport <- gather(topcountry, country, deportations, Mexico:Canada)
+plot12 <- ggplot(topdeport, aes(Year, deportations)) + geom_line() + facet_grid(country ~ .) + 
+  ggtitle("U.S. Deportations 2004-2013") + 
+  theme(plot.title = element_text(family="Trebuchet MS", face ="bold", size=20, hjust=0, color="#555555"))
+print(plot12)
+plot13 <- ggplot(contdeport, aes(Year, deportations)) + geom_line() + facet_grid(name ~ .) + 
+  ggtitle("U.S. Deportations 2004-2013") + 
+  theme(plot.title = element_text(family="Trebuchet MS", face ="bold", size=20, hjust=0, color="#555555"))
+print(plot13)
 
 ###na_percent == 0.9507957
 ggsave("percent_northamerican.pdf", plot3, width = 8, height = 4)
@@ -110,11 +119,7 @@ print(plot11)
 ggsave("Honduras.pdf", plot11)
 wrap_data <- gather(migrant, Year, Canada, Mexico, Guatemala, Honduras)
 plot11 <- ggplot(wrap_data, aes(x=Year, y=deported, group=country, fill = country)) + geom_area()
-plot12 <- ggplot(migrant, aes(country, deportations)) + geom_line() + facet_grid(country ~ .) + 
-  ggtitle("U.S. Deportations 2004-2013") + 
-  theme(plot.title = element_text(family="Trebuchet MS", face ="bold", size=20, hjust=0, color="#555555"))
 
-migrant2013 <- t(migrant2013)
 plot2013 <- ggplot(migrant2013, aes(x=, y=)) + geom_line() + facet_grid(country ~ .) + 
   ggtitle("U.S. Deportations 2004-2013") + 
   theme(plot.title = element_text(family="Trebuchet MS", face ="bold", size=20, hjust=0, color="#555555"))

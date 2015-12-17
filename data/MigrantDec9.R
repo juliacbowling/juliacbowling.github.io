@@ -119,19 +119,40 @@ plot2013 <- ggplot(migrant2013, aes(x=, y=)) + geom_line() + facet_grid(country 
   ggtitle("U.S. Deportations 2004-2013") + 
   theme(plot.title = element_text(family="Trebuchet MS", face ="bold", size=20, hjust=0, color="#555555"))
 
-migrant2013$10=migrant2013$deportations
-head(migrant2013)
-
-removal_history <- read.csv("~/Desktop/juliacbowling.github.io/removal_history.csv")
+removal_history <- read.csv("~/Desktop/juliacbowling.github.io/data/removal_history.csv")
+presidents <- read.csv("~/Desktop/juliacbowling.github.io/data/presidents.csv")
+View(presidents)
 View(removal_history)
 head(removal_history)
+removal_history$Deportations <- removal_history$Removals + removal_history$Returns
+plot5 <- ggplot() + 
+  geom_line(data=removal_history, aes(y=Deportations, x=Year), color="red") +
+  geom_bar(data = presidents, aes(x = TO_YYYY, y = count)) +
+  ggtitle("Deportations 1892-2013") + 
+  theme(plot.title = element_text(family="Helvetica", face ="bold", size=16, hjust=0))
+print(plot5)
+r1950 <- subset(removal_history, Year>1939, drop = FALSE)
+p1950 <- subset(presidents, TO_YYYY>1939, drop = FALSE)
+i1977 <- subset(removal_history, Year>1977, drop = FALSE)
+
+plot5 <- ggplot() + 
+  geom_area(data=r1950, aes(y=Deportations, x=Year), fill="red") +
+  geom_area(data=i1977, aes(y=im_count, x=Year), fill="blue") + 
+  geom_bar(data = p1950, aes(x = TO_YYYY, y = count), stat='identity', width = .1) +  
+  ggtitle("Deportations 1940-2014") + 
+  theme(plot.title = element_text(family="Helvetica", face ="bold", size=16, hjust=0))
+print(plot5)
+ggsave("dep1940.pdf", plot5)
+
 removal1978 <- subset(removal_history, Year>1977, drop = FALSE)
 plot5 <- ggplot(removal1978, aes(x=Year)) + 
-  geom_point(aes(y=Removals), color="purple")+ geom_smooth(aes(y=Removals), color="purple") + geom_point(aes(y=Returns), color="green")+geom_smooth(aes(y=Returns), color="green") + 
-  geom_point(aes(y=im_count), color="blue") + geom_smooth(aes(y=im_count), color="blue") + ggtitle("Imprisonment & Deportation 2004-2013") + 
+  geom_line(aes(y=Deportations), color="purple")+  
+  geom_line(aes(y=im_count), color="blue") + 
+  ggtitle("Imprisonment & Deportation 1977-2014") + 
   theme(plot.title = element_text(family="Helvetica", face ="bold", size=16, hjust=0))
 print(plot5)
 ggsave("im_dep.pdf", plot5)
+
 ######
 ######
 ######

@@ -1,0 +1,26 @@
+State,StateID,Region,code,app,app_oftotal
+Arizona,AZ,South,1,138443,0.209464745
+California,CA,South,1,96503,0.146009378
+Colorado,CO,South-adjacent,4,5045,0.007633103
+District of Columbia,DC,Other,5,5860,0.008866201
+Florida,FL,South,1,13934,0.021082191
+Georgia,GA,South-adjacent,4,17817,0.026957184
+Hawaii,HI,Other,3,95,0.000143735
+Illinois,IL,North,2,13056,0.019753774
+Louisiana,LA,South,1,9980,0.015099775
+Maine,ME,North,2,37,5.59811E-05
+Maryland,MD,Other,5,2637,0.00398979
+Massachusetts,MA,North-adjacent,3,4133,0.006253244
+Michigan,MI,North,2,6200,0.009380622
+Minnesota,MN,North,2,5679,0.008592347
+Montana,MT,North,2,88,0.000133144
+North Dakota,ND,North,2,469,0.000709599
+New Jersey,NJ,North-adjacent,3,4498,0.00680549
+New York,NY,North,2,8396,0.012703177
+Pennsylvania,PA,North-adjacent,3,5158,0.007804072
+Puerto Rico,PR,South,1,1166,0.001764162
+Texas,TX,South,1,306839,0.464248484
+Utah,UT,South-adjacent,4,6182,0.009353388
+Vermont,VT,North,2,531,0.000803405
+Washington,WA,North,2,8191,0.012393012
+United States,USA,N/A,0,660937,1
