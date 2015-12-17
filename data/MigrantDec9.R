@@ -1,6 +1,6 @@
 ###Final Project Prototype
 ###Julia Bowling
-###Data Visualization Nov. 24, 2015
+###Data Visualization
 library("ggplot2")
 library("ggplot2")
 library("tidyr")
@@ -131,6 +131,8 @@ plot5 <- ggplot() +
   ggtitle("Deportations 1892-2013") + 
   theme(plot.title = element_text(family="Helvetica", face ="bold", size=16, hjust=0))
 print(plot5)
+ggsave("dep1892.pdf", plot5)
+
 r1950 <- subset(removal_history, Year>1939, drop = FALSE)
 p1950 <- subset(presidents, TO_YYYY>1939, drop = FALSE)
 i1977 <- subset(removal_history, Year>1977, drop = FALSE)
@@ -144,18 +146,33 @@ plot5 <- ggplot() +
 print(plot5)
 ggsave("dep1940.pdf", plot5)
 
+uspop <- select(Year, uspop)
+removal1978 <- left_join(uspop, removal1978, "Year")
 removal1978 <- subset(removal_history, Year>1977, drop = FALSE)
 plot5 <- ggplot(removal1978, aes(x=Year)) + 
   geom_line(aes(y=Deportations), color="purple")+  
   geom_line(aes(y=im_count), color="blue") + 
+  geom_line(aes(y=uspop), color="green") + 
   ggtitle("Imprisonment & Deportation 1977-2014") + 
   theme(plot.title = element_text(family="Helvetica", face ="bold", size=16, hjust=0))
 print(plot5)
-ggsave("im_dep.pdf", plot5)
+ggsave("im_dep2.pdf", plot5)
 
 ######
+uspop <- read.csv("~/Desktop/juliacbowling.github.io/data/uspop20thcent.csv")
+uspop <- select(Year, uspop)
+rates <- left_join(uspop, removal_history, "Year")
+View(rates)
+rates <- mutate(rates, drate = Deportations/uspop, irate = im_count/uspop)
+
 ######
-######
+
+######for 2013 maps
+dep1 <- read.csv("~/Desktop/juliacbowling.github.io/data/dep1.csv")
+popinc <- read.csv("~/Desktop/juliacbowling.github.io/data/popinc.csv")
+left_join()
+##map of cities involved
+##map of states where deporations happen, what % where?
 tracts <- readOGR(dsn = 'counties', layer = 'cb_2014_us_county_20m')
 names(tracts)
 tracts <- fortify(tracts, region='AFFGEOID')
